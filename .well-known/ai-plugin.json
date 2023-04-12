@@ -1,0 +1,18 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "TODO Plugin",
+    "name_for_model": "todo",
+    "description_for_human": "Plugin for managing a TODO list. You can add, remove and view your TODOs.",
+    "description_for_model": "Plugin for managing a TODO list. You can add, remove and view your TODOs.",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "openapi",
+        "url": "http://localhost:420/openapi.json",
+        "is_user_authenticated": false
+    },
+    "logo_url": "https://cdn.pixabay.com/photo/2016/06/20/22/24/robot-1470108_960_720.png",
+    "contact_email": "gomezmanulm@gmail.com",
+    "legal_info_url": "http://www.secondport.com/legal"
+}
