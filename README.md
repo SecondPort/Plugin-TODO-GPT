@@ -28,12 +28,16 @@ python ProxyHTTP.py
 ## Upload the plugin to ChatGPT 🌐
 
 1. Go to PluginStore:
+
 ![PluginStore](Images/PluginStore.png)
 2. Select **Develop your own plugin**:
+
 ![DevelopYourOwnPlugin](Images/Develop.png)
 3. Enter the local host and port (e.g., `localhost:420`):
+
 ![LocalHost](Images/LocalHost.png)
 4. Click **Install localhost plugin**:
+
 ![InstallLocalHost](Images/InstallLocalHost.png)
 
 Now you can use your plugin in ChatGPT! 🎉
