@@ -7,7 +7,7 @@ This project deals with the use of plugins in conjunction with ChatGPT, in this 
 - `.well-known`: Mandatory folder for ChatGPT to connect to the plugin, containing:
   - `ai-plugin.json`: Manifest file with useful data for the model.
   - `openapi.json`: API definition. [Learn more](https://swagger.io/specification/)
-- `ProxyHTTP.py`: Handles the connection between ChatGPT and the API.
+  - `ProxyHTTP.py`: Handles the connection between ChatGPT and the API.
 - `API`: Contains the API itself:
   - `API.py`: Receives ChatGPT requests and responds with the necessary information.
   - `todos.json`: File containing the TODOs information.
