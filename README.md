@@ -21,7 +21,6 @@ This project is based on the use of plugins in conjunction with ChatGPT, in this
 ```
 cd .\API
 python API.py
-cd ..
 ```
 5. **Run the local proxy**:
 ```
