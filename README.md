@@ -2,7 +2,7 @@
 
 ## Description
 
-This project works with the use of plugins in conjunction with ChatGPT, in this case it's a plugin and an API, which allow you to manage your pending tasks, either adding new tasks or deleting them. This project is divided into two directories:
+This project is based on the use of plugins in conjunction with ChatGPT, in this case it's a plugin and an API, which allow you to manage your pending tasks, either adding new tasks or deleting them. This project is divided into two directories:
 
 - `.well-known`: Mandatory folder for ChatGPT to connect to the plugin, containing:
   - `ai-plugin.json`: Manifest file with useful data for the model.
