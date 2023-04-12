@@ -18,16 +18,16 @@ This project deals with the use of plugins in conjunction with ChatGPT, in this 
 2. **Create virtual environment**: `python -m venv Plugin`
 3. **Install dependencies**: `pip install -r requirements.txt`
 4. **Run the API**:
-cd .\API
+  cd .\API
 
-python API.py
+  python API.py
 
-cd ..
+  cd ..
 
 5. **Run the local proxy**:
-cd .well-known
+  cd .well-known
 
-python ProxyHTTP.py
+  python ProxyHTTP.py
 
 ## Upload the plugin to ChatGPT 🌐
 
