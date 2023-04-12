@@ -1,0 +1,221 @@
+{
+  "info": {
+    "title": "TODO Plugin",
+    "description": "A plugin that allows the user to create and manage a TODO list using ChatGPT.",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:420"
+    }
+  ],
+  "paths": {
+    "/todos": {
+      "get": {
+        "operationId": "getTodos",
+        "summary": "Get the list of todos",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/getTodosResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createTodo",
+        "summary": "Create a new todo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/todoItem"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/todoIdResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/todos/{todo_id}": {
+      "get": {
+        "operationId": "getTodoById",
+        "summary": "Get a specific todo",
+        "parameters": [
+          {
+            "name": "todo_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/todoItemResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "operationId": "updateTodo",
+        "summary": "Update a specific todo",
+        "parameters": [
+          {
+            "name": "todo_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/todoItem"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/todoItemResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteTodo",
+        "summary": "Delete a specific todo",
+        "parameters": [
+          {
+            "name": "todo_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/deleteTodoResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "getTodosResponse": {
+        "type": "object",
+        "properties": {
+          "todos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/todoItem"
+            },
+            "description": "The list of todos."
+          }
+        }
+      },
+      "todoItem": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "The task of the todo item."
+          },
+          "event": {
+            "type": "string",
+            "description": "The event associated with the todo item."
+          }
+        },
+        "required": [
+          "task",
+          "event"
+        ]
+      },
+      "todoItemResponse": {
+        "type": "object",
+        "properties": {
+          "todo_id": {
+            "type": "integer",
+            "description": "The ID of the todo item."
+          },
+          "todo": {
+            "$ref": "#/components/schemas/todoItem",
+            "description": "The todo item."
+          }
+        }
+      },
+      "todoIdResponse": {
+        "type": "object",
+        "properties": {
+          "todo_id": {
+            "type": "integer",
+            "description": "The ID of the todo item."
+          }
+        }
+      },
+      "deleteTodoResponse": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "string",
+            "description": "The result of the delete operation."
+          }
+        }
+      }
+    }
+  }
+}
